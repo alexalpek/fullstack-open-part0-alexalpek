@@ -1,0 +1,17 @@
+note over browser:
+At the time of submitting the new note 
+the following events chain of event happens:
+- the default "reload" of the page is prevented by e.preventDefault()
+- The new note is pushed into the existing notes.
+- The page re-renders the notes with javascript, now containing the new note.
+end note
+
+browser->server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+server-->browser: HTTP Status Code 201
+
+note over browser:
+If, and only if the status code of the 
+answer is 201 & and readyState is 4, 
+the responseText get logged into 
+the console ({"message":"note created"}).
+end note
